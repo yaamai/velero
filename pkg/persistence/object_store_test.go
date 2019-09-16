@@ -36,9 +36,8 @@ import (
 
 	velerov1api "github.com/heptio/velero/pkg/apis/velero/v1"
 	"github.com/heptio/velero/pkg/builder"
-	"github.com/heptio/velero/pkg/cloudprovider"
-	cloudprovidermocks "github.com/heptio/velero/pkg/cloudprovider/mocks"
 	"github.com/heptio/velero/pkg/plugin/velero"
+	providermocks "github.com/heptio/velero/pkg/plugin/velero/mocks"
 	velerotest "github.com/heptio/velero/pkg/test"
 	"github.com/heptio/velero/pkg/util/encode"
 	"github.com/heptio/velero/pkg/volume"
@@ -461,7 +460,7 @@ func TestDeleteBackup(t *testing.T) {
 
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
-			objectStore := new(cloudprovidermocks.ObjectStore)
+			objectStore := new(providermocks.ObjectStore)
 			backupStore := &objectBackupStore{
 				objectStore: objectStore,
 				bucket:      "test-bucket",
