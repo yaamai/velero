@@ -2,7 +2,7 @@
 
 
 [[projects]]
-  digest = "1:28181cff95634e84b01ac5d9d5bffd201cd02404b78a0e69ba29e9bc41703ff0"
+  digest = "1:a24d4f0bfca235899423e806a033447bb840d48970ecd8e1bc409537d0289c23"
   name = "cloud.google.com/go"
   packages = ["compute/metadata"]
   pruneopts = "NUT"
@@ -10,7 +10,20 @@
   version = "v0.46.2"
 
 [[projects]]
-  digest = "1:ac3216ce3f6fff23310618cbc898e49e6af5dc54c46f58873ef0028acd51868c"
+  digest = "1:623dad7b6ddc6b93f983e9852a0785ed606f804d3541fa4b6178d7055b361306"
+  name = "github.com/Azure/azure-sdk-for-go"
+  packages = [
+    "services/compute/mgmt/2018-04-01/compute",
+    "services/storage/mgmt/2018-02-01/storage",
+    "storage",
+    "version",
+  ]
+  pruneopts = "NUT"
+  revision = "32916f57ad7b421f5fdaab86b73a795632fff117"
+  version = "v21.4.0"
+
+[[projects]]
+  digest = "1:90df11ad9349a69d46e08211d47eb8db80311bf985a447dd88cb30d5b5f54add"
   name = "github.com/Azure/go-autorest"
   packages = [
     "autorest",
@@ -18,6 +31,7 @@
     "autorest/azure",
     "autorest/date",
     "autorest/to",
+    "autorest/validation",
     "logger",
     "version",
   ]
@@ -251,6 +265,14 @@
   revision = "0b12d6b5"
 
 [[projects]]
+  digest = "1:da62aa6632d04e080b8a8b85a59ed9ed1550842a0099a55f3ae3a20d02a3745a"
+  name = "github.com/joho/godotenv"
+  packages = ["."]
+  pruneopts = "NUT"
+  revision = "23d116af351c84513e1946b527c88823e476be13"
+  version = "v1.3.0"
+
+[[projects]]
   digest = "1:0243cffa4a3410f161ee613dfdd903a636d07e838a42d341da95d81f42cd1d41"
   name = "github.com/json-iterator/go"
   packages = ["."]
@@ -265,6 +287,14 @@
   packages = ["."]
   pruneopts = "NUT"
   revision = "89fcab3d43de07060e4fd4c1547430ed57e87f24"
+
+[[projects]]
+  digest = "1:13ada91f079028d1b4ca88e10a16439dcfa6541d26ed2e61e770f56d06301933"
+  name = "github.com/marstr/guid"
+  packages = ["."]
+  pruneopts = "NUT"
+  revision = "8bd9a64bf37eb297b492a4101fb28e80ac0b290f"
+  version = "v1.1.0"
 
 [[projects]]
   digest = "1:5985ef4caf91ece5d54817c11ea25f182697534f8ae6521eadcd628c142ac4b6"
@@ -965,6 +995,12 @@
   analyzer-name = "dep"
   analyzer-version = 1
   input-imports = [
+    "github.com/Azure/azure-sdk-for-go/services/compute/mgmt/2018-04-01/compute",
+    "github.com/Azure/azure-sdk-for-go/services/storage/mgmt/2018-02-01/storage",
+    "github.com/Azure/azure-sdk-for-go/storage",
+    "github.com/Azure/go-autorest/autorest",
+    "github.com/Azure/go-autorest/autorest/adal",
+    "github.com/Azure/go-autorest/autorest/azure",
     "github.com/Azure/go-autorest/autorest/to",
     "github.com/aws/aws-sdk-go/aws/endpoints",
     "github.com/aws/aws-sdk-go/aws/session",
@@ -974,6 +1010,7 @@
     "github.com/golang/protobuf/proto",
     "github.com/hashicorp/go-hclog",
     "github.com/hashicorp/go-plugin",
+    "github.com/joho/godotenv",
     "github.com/pkg/errors",
     "github.com/prometheus/client_golang/prometheus",
     "github.com/prometheus/client_golang/prometheus/promhttp",
