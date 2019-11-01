@@ -65,4 +65,4 @@ go build \
     -o ${OUTPUT} \
     -installsuffix "static" \
     -ldflags "${LDFLAGS}" \
-    ${PKG}/cmd/${BIN}
+    ./cmd/${BIN}

@@ -242,6 +242,7 @@ func (m *ServerMetrics) RegisterAllMetrics() {
 
 // InitSchedule initializes counter metrics of a schedule.
 func (m *ServerMetrics) InitSchedule(scheduleName string) {
+	/*
 	if c, ok := m.metrics[backupAttemptTotal].(*prometheus.CounterVec); ok {
 		c.WithLabelValues(scheduleName).Set(0)
 	}
@@ -287,6 +288,7 @@ func (m *ServerMetrics) InitSchedule(scheduleName string) {
 	if c, ok := m.metrics[volumeSnapshotFailureTotal].(*prometheus.CounterVec); ok {
 		c.WithLabelValues(scheduleName).Set(0)
 	}
+	*/
 }
 
 // SetBackupTarballSizeBytesGauge records the size, in bytes, of a backup tarball.

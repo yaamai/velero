@@ -16,7 +16,7 @@ FROM ubuntu:bionic
 
 LABEL maintainer="Steve Kriss <krisss@vmware.com>"
 
-ADD /bin/linux/amd64/velero-restic-restore-helper .
+ADD velero-restic-restore-helper .
 
 USER nobody:nobody
 

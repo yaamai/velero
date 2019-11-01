@@ -156,3 +156,7 @@ func (l *logrusAdapter) ResetNamed(name string) hclog.Logger {
 func (l *logrusAdapter) StandardLogger(opts *hclog.StandardLoggerOptions) *log.Logger {
 	panic("not implemented")
 }
+
+func (l *logrusAdapter) SetLevel(level hclog.Level) {
+	return
+}
