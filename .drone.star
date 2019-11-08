@@ -28,7 +28,7 @@ def pipeline(arch):
         ]
       },
       {
-        "name": "image-build",
+        "name": "image-build-velero",
         "image": "plugins/docker",
         "settings": {
           "username": {
@@ -47,7 +47,7 @@ def pipeline(arch):
         }
       },
       {
-        "name": "image-build",
+        "name": "image-build-restic-helper",
         "image": "plugins/docker",
         "settings": {
           "username": {
@@ -72,7 +72,7 @@ def docker_manifest():
     "name": "manifest",
     "steps": [
       {
-        "name": "push-manifest",
+        "name": "push-manifest-velero",
         "image": "plugins/manifest",
         "settings": {
           "username": {
@@ -91,7 +91,7 @@ def docker_manifest():
         }
       },
       {
-        "name": "push-manifest",
+        "name": "push-manifest-restic-helper",
         "image": "plugins/manifest",
         "settings": {
           "username": {
