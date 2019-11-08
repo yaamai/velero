@@ -45,6 +45,22 @@ def pipeline(arch):
             "ARCH={}".format(arch)
           ]
         }
+      },
+      {
+        "name": "image-build",
+        "image": "plugins/docker",
+        "settings": {
+          "username": {
+            "from_secret": "docker_username"
+          },
+          "password": {
+            "from_secret": "docker_password"
+          },
+          "repo": "yaamai/velero-restic-restore-helper",
+          "auto_tag": True,
+          "auto_tag_suffix": "${DRONE_STAGE_ARCH}",
+          "dockerfile": "Dockerfile-velero-restic-restore-helper"
+        }
       }
     ]
   }
@@ -67,6 +83,25 @@ def docker_manifest():
           },
           "target": "yaamai/velero:latest",
           "template": "yaamai/velero:ARCH",
+          "platforms": [
+            "linux/amd64",
+            "linux/arm",
+            "linux/arm64"
+          ]
+        }
+      },
+      {
+        "name": "push-manifest",
+        "image": "plugins/manifest",
+        "settings": {
+          "username": {
+            "from_secret": "docker_username"
+          },
+          "password": {
+            "from_secret": "docker_password"
+          },
+          "target": "yaamai/velero-restic-restore-helper",
+          "template": "yaamai/velero-restic-restore-helper:ARCH",
           "platforms": [
             "linux/amd64",
             "linux/arm",
