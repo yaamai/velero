@@ -40,7 +40,10 @@ def pipeline(arch):
           "repo": "yaamai/velero",
           "auto_tag": True,
           "auto_tag_suffix": "${DRONE_STAGE_ARCH}",
-          "dockerfile": "Dockerfile-velero"
+          "dockerfile": "Dockerfile-velero",
+          "build_args": [
+            "ARCH={}".format(arch)
+          ]
         }
       }
     ]
