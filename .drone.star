@@ -24,7 +24,7 @@ def pipeline(arch):
           "git status",
           "git remote -v",
           "PKG=velero BIN=velero GOOS=linux GOARCH={} VERSION=master ./hack/build.sh".format(arch),
-          "PKG=velero-restic-restore-helper BIN=velero GOOS=linux GOARCH={} VERSION=master ./hack/build.sh".format(arch)
+          "PKG=velero-restic-restore-helper BIN=velero-restic-restore-helper GOOS=linux GOARCH={} VERSION=master ./hack/build.sh".format(arch)
         ]
       },
       {
